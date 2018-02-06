@@ -8,4 +8,8 @@
 
 运行: python command.py -k 电影名 -n 10
 
+![GitHub][github]
+
+[github]: demo.png
+
 相关细节陆续完善ing...

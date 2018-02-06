@@ -63,7 +63,7 @@ def parse(content,kw,p):
                         "link":link
                     })
 
-        print(magnets)
+        utils.print_format(magnets)
 
     else:
         print("页码:"+str(p)+",《"+kw+"》暂无资源 ...")
