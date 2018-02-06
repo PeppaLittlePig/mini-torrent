@@ -13,6 +13,11 @@ def concact_str(list):
     return result.strip();
 
 def print_format(magnets):
+    '''
+    格式化打印
+    :param magnets:
+    :return:
+    '''
     if len(magnets) > 0:
         for magnet in magnets:
             print("片名："+magnet["title"])
@@ -22,7 +27,12 @@ def print_format(magnets):
             print("磁链：" + magnet["link"] + "\n")
 
 def save_file(magnets,path):
-    content = ''
+    '''
+    保存至文件
+    :param magnets:
+    :param path:
+    :return:
+    '''
     if len(magnets) > 0:
         f = codecs.open(path, 'a', 'utf8')
         for magnet in magnets:
@@ -34,5 +44,13 @@ def save_file(magnets,path):
             f.write("\r\n")
 
         f.close()
+
+def  getSort(sort):
+    if sort == 1:
+        return 'length'
+    elif sort == 2:
+        return 'click'
+    else:
+        return 'ctime'
 
 

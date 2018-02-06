@@ -13,7 +13,7 @@ HEADER = {
     "User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"}
 
 
-def run(kw,num):
+def run(kw,num,sort):
     '''
     开始抓取资源
     :param kw: 搜索关键字
@@ -26,7 +26,7 @@ def run(kw,num):
     #every page 10 row
     page = int(math.ceil(num / 10))
     for p in range(1,page + 1):
-        url = search_addr + "/search/{kw}_ctime_{p}.html".format(kw=kw, p=p)
+        url = search_addr + "/search/{kw}_{sort}_{p}.html".format(kw=kw,sort=utils.getSort(sort),p=p)
         try:
             resp = requests.get(url,headers=HEADER).text
             return parse(resp,kw,p)
