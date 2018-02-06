@@ -6,7 +6,7 @@
 
 ==========================================
 
-运行: python command.py -k 电影名 -n 10
+运行: python command.py -k 电影名 -n 10 -o result.txt
 
 ![GitHub][github]
 

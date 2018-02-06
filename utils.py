@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import codecs
 
 def concact_str(list):
     '''
@@ -19,3 +20,19 @@ def print_format(magnets):
             print("日期：" + magnet["time"])
             print("热度：" + magnet["rank"])
             print("磁链：" + magnet["link"] + "\n")
+
+def save_file(magnets,path):
+    content = ''
+    if len(magnets) > 0:
+        f = codecs.open(path, 'a', 'utf8')
+        for magnet in magnets:
+            f.write("片名：" + magnet["title"] +"\r\n")
+            f.write("大小：" + magnet["size"] +"\r\n")
+            f.write("日期：" + magnet["time"] +"\r\n")
+            f.write("热度：" + magnet["rank"] +"\r\n")
+            f.write("磁链：" + magnet["link"] + "\r\n")
+            f.write("\r\n")
+
+        f.close()
+
+

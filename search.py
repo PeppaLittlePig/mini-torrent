@@ -29,7 +29,7 @@ def run(kw,num):
         url = search_addr + "/search/{kw}_ctime_{p}.html".format(kw=kw, p=p)
         try:
             resp = requests.get(url,headers=HEADER).text
-            parse(resp,kw,p)
+            return parse(resp,kw,p)
         except Exception as e:
             print(e)
 
@@ -63,14 +63,12 @@ def parse(content,kw,p):
                         "link":link
                     })
 
-        utils.print_format(magnets)
+        return magnets
 
     else:
         print("页码:"+str(p)+",《"+kw+"》暂无资源 ...")
 
 
-if __name__ == '__main__':
-    run('宝贝计划',10)
 
 
 
