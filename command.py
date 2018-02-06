@@ -13,11 +13,11 @@ def get_parser():
     parser.add_argument('-k', '--keyword', type=str,
                         help='torrent keyword.')
     parser.add_argument('-n', '--num', type=int, default=10,
-                        help='magnet number.(default 10)')
+                        help='data row number.(default 10)')
     parser.add_argument('-s', '--sort', type=int, default=0,
                         help='0: Sort by date，1: Sort by size. 2: Sort by hot-rank.(default 0)')
     parser.add_argument('-o', '--output', type=str,
-                        help='output file path, supports csv and json format.')
+                        help='output file path, supports *.txt.')
     parser.add_argument('-v', '--version', action='store_true',
                         help='version information.')
     return parser
